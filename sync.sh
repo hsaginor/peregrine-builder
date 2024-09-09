@@ -44,3 +44,12 @@ while read line; do
   echo $PEREGRINE_BUILDER_DIR/$REL_PATH
   diff $PEREGRINE_BUILDER_DIR$REL_PATH $line > diffs/$FILE_NAME.diff
 done < diffs/diff-list-other.txt
+
+diff peregrine-builder/builder/pom.xml sling-org-apache-sling-starter/pom.xml > diffs/pom.xml.diff
+git diff peregrine-builder/builder/pom.xml sling-org-apache-sling-starter/pom.xml > diffs/pom.xml.patch
+
+# if diffs/pom.xml.diff is not empty display the diff
+if [ -s diffs/pom.xml.diff ]; then
+  echo "pom.xml diff:"
+  cat diffs/pom.xml.patch
+fi
