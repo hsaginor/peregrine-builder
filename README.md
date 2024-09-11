@@ -27,6 +27,7 @@ Expected differences are:
 files that only exist in one of the projects:
 
 ```shell
+builder/src/main/features/google-guava.json
 builder/src/main/features/app/distribution.json
 sling-org-apache-sling-starter/src/main/container/*
 sling-org-apache-sling-starter/src/main/features/app/htl_repl.json
