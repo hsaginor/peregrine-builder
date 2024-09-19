@@ -6,11 +6,11 @@
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.healthcheck.core:2.0.10",
+            "id":"org.apache.felix:org.apache.felix.healthcheck.core:2.2.0",
             "start-order":"5"
         },
         {
-            "id":"org.apache.felix:org.apache.felix.healthcheck.generalchecks:2.0.14",
+            "id":"org.apache.felix:org.apache.felix.healthcheck.generalchecks:3.0.8",
             "start-order":"5"
         },
         {
@@ -18,7 +18,7 @@
             "start-order":"20"
         },
         {
-            "id":"org.apache.sling:org.apache.sling.hc.support:1.0.6",
+            "id":"org.apache.sling:org.apache.sling.hc.support:1.0.10",
             "start-order":"20"
         }
     ],
@@ -26,6 +26,12 @@
         "org.apache.felix.hc.generalchecks.BundlesStartedCheck":{
             "hc.tags":[
                 "bundles"
+            ]
+        },
+        "org.apache.sling.jcr.contentloader.hc.BundleContentLoadedCheck":{
+            "hc.tags":[
+                "bundles",
+                "content-loading"
             ]
         },
         "org.apache.felix.hc.generalchecks.CpuCheck":{
@@ -77,24 +83,13 @@
                 "system-resources"
             ]
         },
-        "org.apache.felix.hc.core.impl.filter.ServiceUnavailableFilter~startupandshutdown":{
-            "osgi.http.whiteboard.filter.regex":"(?!/system/).*",
-            "avoid404DuringStartup":true,
-            "service.ranking:Integer":"2147483647",
-            "includeExecutionResult":false,
-            "osgi.http.whiteboard.context.select":"(osgi.http.whiteboard.context.name=*)",
-            "tags":[
-                "systemalive"
-            ],
-            "autoDisableFilter":true,
-            "responseTextFor503":"classpath:com.peregrine-cms.base.core:SLING-INF/content/startup/index.html"
-        },
         "org.apache.felix.hc.core.impl.servlet.HealthCheckExecutorServlet~default":{
-            "servletPath":"/system/health"
+            "servletPath":"/system/health",
+	    "servletContextName":"org.osgi.service.http"
         },
         "org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended~hc-support":{
             "user.mapping":[
-                "org.apache.sling.hc.support=sling-readall"
+                "org.apache.sling.hc.support=[sling-readall]"
             ]
         }
     }
