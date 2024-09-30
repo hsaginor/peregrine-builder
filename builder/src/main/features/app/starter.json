@@ -1,10 +1,6 @@
 {
     "bundles": [
         {
-            "id":"org.apache.sling:org.apache.sling.starter.content:1.0.14",
-            "start-order":"20"
-        },
-        {
             "id":"com.peregrine-cms:com.peregrine-cms.starter.content:1.0.0-SNAPSHOT",
             "start-order":"20"
         }
