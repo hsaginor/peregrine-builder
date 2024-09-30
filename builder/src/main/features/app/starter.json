@@ -1,0 +1,22 @@
+{
+    "bundles": [
+        {
+            "id":"com.peregrine-cms:com.peregrine-cms.starter.content:1.0.0-SNAPSHOT",
+            "start-order":"20"
+        }
+    ],
+    "configurations": {
+        "org.apache.felix.hc.core.impl.filter.ServiceUnavailableFilter~startupandshutdown":{
+            "osgi.http.whiteboard.filter.regex":"(?!/system/).*",
+            "avoid404DuringStartup":true,
+            "service.ranking:Integer":"2147483647",
+            "includeExecutionResult":false,
+            "osgi.http.whiteboard.context.select":"(osgi.http.whiteboard.context.name=*)",
+            "tags":[
+                "systemalive"
+            ],
+            "autoDisableFilter":true,
+            "responseTextFor503":"classpath:com.peregrine-cms.starter.content:startup/index.html"
+        }
+    }
+}
