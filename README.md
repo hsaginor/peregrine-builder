@@ -29,6 +29,7 @@ files that only exist in one of the projects:
 ```shell
 builder/src/main/features/google-guava.json
 builder/src/main/features/app/distribution.json
+builder/starter-content
 sling-org-apache-sling-starter/src/main/container/*
 sling-org-apache-sling-starter/src/main/features/app/htl_repl.json
 sling-org-apache-sling-starter/src/main/features/app/slingshot-repoinit.txt
@@ -42,6 +43,10 @@ file with differences:
 builder/src/main/features/boot.json 
 "sling.run.mode.install.options":"oak_tar_fds,oak_tar,oak_mongo|local,live,author,publish|notshared,shared",
 "sling.run.modes":"${sling.runmodes}",
+```
+
+```shell
+builder/src/main/features/app/starter.json
 ```
 
 heavily modified file
